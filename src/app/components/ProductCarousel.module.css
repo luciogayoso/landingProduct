@@ -1,0 +1,22 @@
+.carousel{
+    width: 60vw;
+    height: 300px;
+    padding: 50px;
+}
+
+.swiper {
+  width: 80vw;
+  height: 300px;
+  padding: 50px;
+}
+
+.swiper-wrapper{
+  width: 80vw;
+  height: 300px;
+  padding: 50px;
+}
+
+.img {
+  width: 100%;
+}
+
