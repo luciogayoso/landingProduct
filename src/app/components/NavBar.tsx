@@ -3,13 +3,11 @@
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import React, { useEffect, useState } from 'react';
-import { off } from "process";
 
 
 const Navbar = () => {
 
   const [offset, setOffset] = useState(0);
-  const [backgroundColor, setbackgroundColor] = useState("#f3e8e800");
 
     useEffect(() => {
         const onScroll = () => setOffset(window.pageYOffset);

@@ -1,15 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "./components/NavBar";
+import React, { useEffect, useState } from 'react';
 import ProductCarousel from "./components/ProductCarousel";
 import Section from "./components/Secction";
 import ProductCard from "./components/ProductosCard";
 import BackToTopButton from "./components/BackToTopButton";
 import Video from "./components/Video";
 
-
-
 export default function Home() {
+
+
+ const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => setOffset(window.pageYOffset);
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+
   return (
     <div className={styles.page} >
       <Video />
@@ -78,7 +91,7 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-      <BackToTopButton />
+      {offset > 100 ? <BackToTopButton /> : null}
     </div>
   );
 }
