@@ -1,16 +1,23 @@
 .navbar {
-    background-color: #333;
-    padding: 1rem;
-    width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #f3e8e800;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 20;
   }
-  
+
   .navbar ul {
     list-style: none;
     display: flex;
     justify-content: space-around;
+    width: 50%;
   }
   
-  .navbar a {
-    color: white;
+  .navbar ul li a {
+    color: rgb(246, 241, 241);
     text-decoration: none;
   }

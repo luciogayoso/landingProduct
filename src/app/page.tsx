@@ -5,15 +5,19 @@ import ProductCarousel from "./components/ProductCarousel";
 import Section from "./components/Secction";
 import ProductCard from "./components/ProductosCard";
 import BackToTopButton from "./components/BackToTopButton";
+import Video from "./components/Video";
 
 
 
 export default function Home() {
   return (
     <div className={styles.page} >
-      <Navbar />
+      <Video />
       <main className={styles.main}>
-        <Section id="inicio" title="Inicio">
+        <section className={styles.esapcio}> 
+          <Navbar />
+        </section>
+        <Section id="inicio" title={styles.section}>
           <ProductCarousel />
         </Section>
         <Section id="nosotros" title="Nosotros">

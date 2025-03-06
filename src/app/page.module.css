@@ -11,7 +11,6 @@
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
 
@@ -53,6 +52,9 @@
 }
 
 .main {
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -76,7 +78,7 @@
 .main code {
   font-family: inherit;
   background: var(--gray-alpha-100);
-  padding: 2px 4px;
+  padding-top: 80vh;
   border-radius: 4px;
   font-weight: 600;
 }
@@ -115,6 +117,10 @@ a.primary {
 a.secondary {
   border-color: var(--gray-alpha-200);
   min-width: 180px;
+}
+
+.esapcio{
+  margin-bottom: 80vh;
 }
 
 .footer {

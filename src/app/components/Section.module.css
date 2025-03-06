@@ -1,8 +1,17 @@
+#inicio {
+  margin-top: 80vh;
+}
+
 .section {
-    padding: 2rem;
-    margin: 2rem 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
-  .section h2 {
+.section h2 {
     margin-bottom: 1rem;
   }
+
