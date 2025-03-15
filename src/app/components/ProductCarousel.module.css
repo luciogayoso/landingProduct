@@ -1,22 +1,23 @@
 .carousel{
     width: 60vw;
-    height: 300px;
+    height: auto;
     z-index: 10;
 }
 
 .swiper {
   width: 80vw;
-  height: 300px;
+  height: auto;
   padding: 50px;
 }
 
 .swiper-wrapper{
   width: 80vw;
-  height: 300px;
+  height: auto;
   padding: 50px;
 }
 
 .img {
   width: 100%;
+  height: auto;
 }
 

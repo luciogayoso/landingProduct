@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "./components/NavBar";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import ProductCarousel from "./components/ProductCarousel";
 import Section from "./components/Secction";
 import ProductCard from "./components/ProductosCard";
@@ -22,27 +23,64 @@ export default function Home() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    const productAnimation = {
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0 },
+    };
 
   return (
     <div className={styles.page} >
       <Video />
       <main className={styles.main}>
-        <section className={styles.esapcio}> 
+        <section> 
           <Navbar />
         </section>
-        <Section id="inicio" title={styles.section}>
+        <div className={styles.esapcio}></div>
+        <Section id="servicios" title="">
+          {offset >= 500 && offset < 1300 ?
+       
+          <motion.div
+          className={styles.servicios}
+          initial="hidden"
+          animate="visible"
+          variants={productAnimation}
+          transition={{ duration: 0.5, staggerChildren: 0.2 }}
+          >
+           
+          <motion.div className={styles.servicios}>
+          <ProductCard
+            title="Corte Unixes"
+            description="Corte de cabello para hombres y mujeres"
+            imageUrl="/corte.jpg"
+          />
+          </motion.div>
+
+          <motion.div variants={productAnimation}>
+          <ProductCard
+            title="Coloración"
+            description="Coloración profecional de todos los estilos"
+            imageUrl="/coloracion.jpg"
+          />
+          </motion.div>
+
+          <motion.div variants={productAnimation}>
+          <ProductCard
+            title="Peinados"
+            description="Peinados para toda ocasión y estilo"
+            imageUrl="/peinados.jpg"
+          />
+          </motion.div>
+          </motion.div>
+          : <div style={{height:"100vw"}}></div>}
+        </Section>
+        
+        <Section id="promociones" title={styles.section}>
           <ProductCarousel />
         </Section>
         <Section id="nosotros" title="Nosotros">
           <p>Somos una empresa dedicada a la venta de productos electrónicos de alta calidad.</p>
         </Section>
-        <Section id="productos" title="Productos">
-          <ProductCard
-            title="Product 1"
-            description="This is a description for product 1"
-            imageUrl="/product1.jpg"
-          />
-        </Section>
+        
         <Section id="contacto" title="Contacto">
           <p>Puedes contactarnos a través de nuestro correo electrónico: contacto@empresa.com</p>
         </Section>

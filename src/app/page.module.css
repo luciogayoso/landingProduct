@@ -14,7 +14,7 @@
   gap: 64px;
   font-family: var(--font-geist-sans);
 
-  background-color: rgb(11, 15, 66);
+  background-color: rgb(5, 5, 5);
 }
 
 .backToTop {
@@ -120,7 +120,14 @@ a.secondary {
 }
 
 .esapcio{
-  margin-bottom: 80vh;
+  margin-bottom: 100%;
+  opacity: 0;
+}
+
+.servicios{
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
 }
 
 .footer {
